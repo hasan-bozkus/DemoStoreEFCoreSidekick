@@ -1,0 +1,46 @@
+﻿@model List<ResultEmployeeDTO>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <title>EmployeeList</title>
+</head>
+<body>
+
+    <div class="container">
+        <br />
+        <br />
+        <table class="table table-bordered">
+            <tr>
+                <th>#</th>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Maaş</th>
+                <th>Departman</th>
+                <th>Durum</th>
+            </tr>
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.EmployeeId</td>
+                    <td>@item.EmployeeName</td>
+                    <td>@item.EmployeeSurname</td>
+                    <td>@item.EmployeeSalary</td>
+                    <td>@item.EmployeeDepartment</td>
+                    <td>@item.EmployeeStatus</td>
+                </tr>
+            }
+
+        </table>
+        <a href="/Employee/EmployeeList/" class="btn btn-primary">Yeni Presonel Girişi</a>
+    </div>
+
+</body>
+</html>
